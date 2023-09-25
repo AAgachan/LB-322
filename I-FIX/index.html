@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-FIX</title>
+    <style>
+        @font-face {
+            font-family: 'Gotham Bold';
+            src: url('GothamBold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Gotham Light';
+            src: url('GothamLight.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Gotham Medium';
+            src: url('GothamMedium.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.5em;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #d1d1d1;
+            background-size: cover;
+            height: 1000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Gotham Bold', sans-serif;
+            font-size: 250px;
+            color: rgb(56, 56, 56);
+            position: relative;
+            right: 100px;
+            top: 50px;
+        }
+
+        header h2 {
+            position: relative;
+            font-family: 'Gotham Thin', sans-serif;
+            font-size: 50px;
+            color: rgb(56, 56, 56);
+            left: -750px;
+            bottom: 50px;
+            text-decoration: underline 2px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            font-family: 'Gotham Bold', sans-serif;
+            background-color: transparent;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 99;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        nav a.active {
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Key Features Styles */
+        .key-features-section {
+            font-family: 'Gotham Medium', sans-serif;
+            background-color: #28282b;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            padding-bottom: 50px;
+        }
+
+        .key-features {
+            font-family: 'Gotham Medium', sans-serif;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .feature-box {
+            background-color: #c5c5c5;
+            padding: 125px;
+            text-align: center;
+            width: 250px;
+            height: 100px;
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .feature-name {
+            font-family: 'Gotham Medium', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+
+        .feature-description {
+            font-size: 16px;
+        }
+
+
+
+
+
+        .new-feature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            background-color: #28282b;
+            width: auto;
+            height: 1080px;
+        }
+
+        .new-feature img {
+            position: relative;
+            max-width: 2000px;
+            max-height: 2000px;
+            margin-right: 20px;
+            box-shadow: 40px 40px 8px rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .new-feature .feature-description {
+            position: relative;
+            text-align: left;
+            padding: 20px;
+            max-width: 500px;
+            left: 50px;
+            background-color: #1f1f22;
+            font-size: 20px;
+        }
+
+        /*----------------------------------------*/
+
+        .proof-section {
+            background-color: #d1d1d1;
+            padding: 50px 0;
+            text-align: center;
+            color: #1f1f22;
+        }
+
+        .proof-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .proof-item {
+            flex-basis: 20%;
+            text-align: center;
+        }
+
+        .proof-item img {
+            max-width: 250px;
+            max-height: 250px;
+            height: auto;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+        }
+
+        /*------------------------------------*/
+        /* Product Section Styles */
+        .product-section {
+            background-color: #d1d1d1;
+            padding: 50px 0;
+            text-align: center;
+            color: #1f1f22;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .product-item {
+            flex-basis: 20%;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+        }
+
+        .product-item h3 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .product-item p {
+            font-size: 16px;
+        }
+
+        /*---------------------------------*/
+        /* CTA Section Styles */
+        .cta-section {
+            background-color: #1f1f22;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Gotham Medium', sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-family: 'Gotham Light', sans-serif;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d1d1d1;
+            color: #1f1f22;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            font-family: 'Gotham Medium', sans-serif;
+        }
+
+        .cta-button:hover {
+            background-color: #28282b;
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            background-color: #d1d1d1;
+            padding: 50px 50px;
+
+            text-align: center;
+            color: #1f1f22;
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /*----------------------*/
+        .footer {
+            background-color: #28282b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>I-FIX</h1>
+        <h2>Öffnungszeiten: Mo-Fr: 8:00-17:00</h2>
+        <nav>
+            <a href="#" class="active">HOME</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="">CONTACT</a>
+        </nav>
+    </header>
+    <section class="key-features-section">
+        <h2>KEY FEATURES</h2>
+        <div class="key-features">
+            <div class="feature-box">
+                <div class="feature-icon">🔧</div>
+                <div class="feature-name">Quick Repairs</div>
+                <div class="feature-description">Fast and efficient phone repairs.</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">✨</div>
+                <div class="feature-name">Quality Parts</div>
+                <div class="feature-description">We use high-quality replacement parts.</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🏆</div>
+                <div class="feature-name">Expert Technicians</div>
+                <div class="feature-description">Skilled technicians for all repairs.</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🏷️</div>
+                <div class="feature-name">Affordable Prices</div>
+                <div class="feature-description">Competitive pricing for our services.</div>
+            </div>
+        </div>
+        <div class="new-feature">
+            <img src="Android-Phone-Repair.jpg" alt="Phone Repair">
+            <div class="feature-description">
+                <h3>Ihr neues Feature</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quas praesentium aut? Dolores,
+                    corporis magnam accusantium reiciendis ut numquam sed aspernatur laudantium commodi voluptate?
+                    Asperiores cupiditate nam animi similique qui?</p>
+            </div>
+        </div>
+        <div class="proof-section">
+            <h2>PROOF</h2>
+            <div class="proof-items">
+                <div class="proof-item">
+                    <img src="images.png" alt="Proof 1">
+                    <p>Proof 1 Description</p>
+                </div>
+                <div class="proof-item">
+                    <img src="apps.33650.13510798887168357.43e621ee-0e8c-41d9-99d7-3904895e2721.png" alt="Proof 2">
+                    <p>Proof 2 Description</p>
+                </div>
+                <div class="proof-item">
+                    <img src="Android-Phone-Repair.jpg" alt="Proof 3">
+                    <p>Proof 3 Description</p>
+                </div>
+                <div class="proof-item">
+                    <img src="866046380CellPhoneRepairTechnician.webp" alt="Proof 4">
+                    <p>Proof 4 Description</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <div class="product-section">
+        <h2>OUR PRODUCTS</h2>
+        <div class="products">
+            <div class="product-item">
+                <img src="Screenshot 2023-09-25 140558.png" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Description of Product 1</p>
+            </div>
+            <div class="product-item">
+                <img src="Screenshot 2023-09-25 140558.png" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Description of Product 2</p>
+            </div>
+            <div class="product-item">
+                <img src="Screenshot 2023-09-25 140558.png" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>Description of Product 3</p>
+            </div>
+            <div class="product-item">
+                <img src="Screenshot 2023-09-25 140558.png" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>Description of Product 4</p>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to get started?</h2>
+            <p>Contact us now for all your repair needs.</p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 I-FIX. All rights reserved.</p>
+        <p>-</p>
+        <p>Standort: Krankengasse 25 Baden.</p>
+        <p>-</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+
+</html>
