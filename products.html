@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>I-Fix</title>
+    <style>
+        /* Navigation Styles */
+        nav {
+            font-family: 'Gotham Bold', sans-serif;
+            background-color: transparent;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 99;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        nav a.active {
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: "Gotham Medium", sans-serif;
+            background-color: #28282b;
+            width: 100%;
+            margin: 0;
+        }
+
+        #wrapper {
+            margin-top: 200px;
+            text-align: center;
+            flex-grow: 1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .box {
+            float: left;
+            width: 400px;
+            height: 500px;
+            padding: 10px;
+            background-color: white;
+            margin: 10px;
+            border: 10px solid #28282b;
+            border-radius: 5px;
+        }
+
+        .product-img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .footer {
+            background-color: #28282b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#" class="active">Products</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="wrapper">
+
+        <div class="box">
+
+            <a href="product1.html">
+                <div class="product-img">
+                    <img src="handy-vorher-nachher-1024x1024.png" id="image" alt="Produkt 1">
+                </div>
+            </a>
+
+            <h3 id="Name">Handy Flicken</h3>
+            <p id="Preis">Preis: 9,99€</p>
+
+        </div>
+
+        <div class="box">
+
+            <a href="product1.html">
+                <div class="product-img">
+                    <img src="ch-galaxy-a54-5g-sm-a546-sm-a546blvceue-535792298.avif" id="image" alt="Produkt 1">
+                </div>
+            </a>
+
+            <h3 id="Name">Samsung</h3>
+            <p id="Preis">Preis: 599,99€</p>
+
+        </div>
+
+        <div class="box">
+
+            <a href="product1.html">
+                <div class="product-img">
+                    <img src="refurb-iphone-12-purple-2021.jpeg" id="image" alt="Produkt 1">
+                </div>
+            </a>
+
+            <h3 id="Name">IPhone</h3>
+            <p id="Preis">Preis: 999,99€</p>
+
+        </div>
+
+        <div class="box">
+
+            <a href="product1.html">
+                <div class="product-img">
+                    <img src="RE4LqQX.avif" id="image" alt="Produkt 1">
+                </div>
+            </a>
+
+            <h3 id="Name">Laptop</h3>
+            <p id="Preis">Preis: 1499,99€</p>
+
+        </div>
+
+        <div class="box">
+
+            <a href="product1.html">
+                <div class="product-img">
+                    <img src="05jhTX87Wr4f5FVH5XSos96-1.fit_lim.size_840x473.v1646670731.jpg" id="image"
+                        alt="Produkt 1">
+                </div>
+            </a>
+
+            <h3 id="Name">Computer</h3>
+            <p id="Preis">Preis: 1999,99€</p>
+
+        </div>
+        <footer class="footer">
+            <p>2 Jahre Garantie auf alles</p>
+            <p></p>
+            <p></p>
+        </footer>
+    </div>
+
+</html>
